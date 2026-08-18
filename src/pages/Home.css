@@ -1,0 +1,47 @@
+.home-hero {
+  height: 85vh;
+  background: url('/images/hero-storefront.jpg') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-hero-overlay {
+  text-align: center;
+  color: var(--white);
+}
+
+.home-hero-overlay h1 {
+  color: var(--white);
+  font-size: 4rem;
+  letter-spacing: 0.1em;
+}
+
+.home-hero-overlay p {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem;
+}
+
+.home-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.9rem 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn-outline {
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+
+.btn-filled {
+  background: var(--white);
+  color: var(--black);
+}

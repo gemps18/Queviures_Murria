@@ -1,0 +1,57 @@
+.us-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.us-images {
+  position: relative;
+  flex: 1;
+  min-width: 320px;
+}
+
+.us-image-main {
+  width: 100%;
+  display: block;
+  filter: grayscale(100%);
+}
+
+.us-image-overlap {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  width: 55%;
+  border: 6px solid var(--white);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.us-content {
+  flex: 1;
+  min-width: 320px;
+  position: relative;
+}
+
+.us-year-watermark {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  font-family: var(--serif);
+  font-size: 6rem;
+  color: var(--cream);
+  z-index: -1;
+  letter-spacing: 0.3em;
+}
+
+.us-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.us-content p {
+  color: var(--text);
+  line-height: 1.7;
+}

@@ -1,0 +1,59 @@
+.menu-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.menu-category {
+  margin-bottom: 3rem;
+}
+
+.menu-category h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.6rem 0;
+  color: var(--text-dark);
+}
+
+.menu-item-name {
+  white-space: nowrap;
+}
+
+.menu-item-dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--border);
+  transform: translateY(-4px);
+}
+
+.menu-item-price {
+  font-weight: 600;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.menu-notes {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text);
+  font-style: italic;
+}
+
+.menu-notes p {
+  margin: 0.4rem 0;
+}

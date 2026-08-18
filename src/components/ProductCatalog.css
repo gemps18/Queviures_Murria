@@ -1,0 +1,148 @@
+.catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.catalog-filters {
+  width: 100%;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+}
+
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  cursor: pointer;
+  padding: 0;
+}
+
+.filter-badge {
+  background: #2c2c2c;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
+.filter-chevron {
+  font-size: 0.8rem;
+  color: #888;
+  transition: transform 0.15s ease;
+}
+
+.filter-chevron.open {
+  transform: rotate(180deg);
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 1.5rem 1.25rem;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 1rem;
+}
+
+.filter-group {
+  min-width: 180px;
+}
+
+.filter-group h4 {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.5rem;
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background: white;
+  color: #222;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.pill-active {
+  background: #2c2c2c;
+  color: white;
+  border-color: #2c2c2c;
+}
+
+.catalog-grid {
+  flex: 1;
+}
+
+.result-count {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.product-meta {
+  color: #888;
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+.product-price {
+  font-weight: 600;
+}
+
+.lazy-image-wrapper {
+  width: 100%;
+  background: #f2f2f2;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.lazy-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

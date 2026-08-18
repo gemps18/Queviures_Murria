@@ -1,0 +1,13 @@
+.page-hero {
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-hero h1 {
+  color: var(--white);
+  font-size: 3.5rem;
+}

@@ -1,0 +1,75 @@
+.gift-vouchers {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.gift-vouchers h2 {
+  font-size: 2.2rem;
+}
+
+.voucher-subtext {
+  color: var(--text);
+  margin: 0.75rem 0 3rem;
+}
+
+.voucher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.voucher-card {
+  border: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+}
+
+.voucher-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voucher-amount {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.voucher-card h3 {
+  margin: 1rem 0 0.25rem;
+  font-size: 1.2rem;
+}
+
+.voucher-price {
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.voucher-buy-btn {
+  border: 1px solid var(--navy);
+  background: var(--white);
+  color: var(--navy);
+  padding: 0.6rem 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.voucher-buy-btn:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.voucher-confirmation {
+  margin-top: 2rem;
+  color: var(--navy);
+  font-weight: 600;
+}
