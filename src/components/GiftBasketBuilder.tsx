@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { products, type Product } from "../data/product";
+import { useCartStore } from "../store/useCartStore";
 import "./GiftBasketBuilder.css";
 
 interface Step {
@@ -17,6 +18,7 @@ const STEPS: Step[] = [
 export default function GiftBasketBuilder() {
   const [stepIndex, setStepIndex] = useState(0);
   const [selections, setSelections] = useState<Record<string, Product[]>>({});
+  const addItem = useCartStore((s) => s.addItem);
 
   const step = STEPS[stepIndex];
   const chosenForStep = selections[step.key] || [];
@@ -47,6 +49,20 @@ export default function GiftBasketBuilder() {
 
   const canAdvance = chosenForStep.length === step.max;
   const isLastStep = stepIndex === STEPS.length - 1;
+
+  const handleAddToCart = () => {
+    const allItems = Object.values(selections).flat();
+    const details = allItems.map((p) => p.name).join(", ");
+    addItem({
+      id: `basket-${Date.now()}`,
+      name: "Custom Gift Basket",
+      price: total,
+      type: "basket",
+      details,
+    });
+    setSelections({});
+    setStepIndex(0);
+  };
 
   return (
     <section className="basket-builder">
@@ -87,7 +103,9 @@ export default function GiftBasketBuilder() {
         {!isLastStep ? (
           <button disabled={!canAdvance} onClick={() => setStepIndex((i) => i + 1)}>Next</button>
         ) : (
-          <button disabled={!canAdvance} className="checkout-btn">Add gift basket to cart — €{total.toFixed(2)}</button>
+          <button disabled={!canAdvance} className="checkout-btn" onClick={handleAddToCart}>
+            Add gift basket to cart — €{total.toFixed(2)}
+          </button>
         )}
       </div>
 

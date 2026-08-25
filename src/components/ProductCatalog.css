@@ -132,6 +132,32 @@
   font-weight: 600;
 }
 
+.product-add-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.product-qty-input {
+  width: 50px;
+  padding: 0.4rem;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.product-add-btn {
+  flex: 1;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 .lazy-image-wrapper {
   width: 100%;
   background: #f2f2f2;

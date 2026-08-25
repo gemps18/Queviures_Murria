@@ -1,15 +1,15 @@
-import { useState } from "react";
 import { useLanguage } from "../hooks/useLanguage";
+import { useCartStore } from "../store/useCartStore";
 import { shopContent, giftVouchers } from "../data/shop";
 import "./GiftVouchers.css";
 
 export default function GiftVouchers() {
   const { language } = useLanguage();
+  const addItem = useCartStore((s) => s.addItem);
   const c = shopContent;
-  const [confirmation, setConfirmation] = useState("");
 
-  const handleBuy = (amount: number) => {
-    setConfirmation(`${c.confirmationPrefix[language]} Gift Voucher ${amount} — €${amount.toFixed(2)}`);
+  const handleBuy = (id: string, amount: number) => {
+    addItem({ id, name: `Gift Voucher ${amount}`, price: amount, type: "voucher" });
   };
 
   return (
@@ -25,14 +25,12 @@ export default function GiftVouchers() {
             </div>
             <h3>Gift Voucher {v.amount}</h3>
             <p className="voucher-price">€ {v.amount.toFixed(2)}</p>
-            <button className="voucher-buy-btn" onClick={() => handleBuy(v.amount)}>
+            <button className="voucher-buy-btn" onClick={() => handleBuy(v.id, v.amount)}>
               {c.buyButton[language]}
             </button>
           </div>
         ))}
       </div>
-
-      {confirmation && <p className="voucher-confirmation">{confirmation}</p>}
     </div>
   );
 }

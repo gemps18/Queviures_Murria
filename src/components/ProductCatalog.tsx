@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useCatalogStore } from "../store/useCatalogStore";
-import { filterOptions } from "../data/product";
+import { useCartStore } from "../store/useCartStore";
+import { useLanguage } from "../hooks/useLanguage";
+import { filterOptions, type Product } from "../data/product";
+import { cartContent } from "../data/cart";
 import LazyImage from "./LazyImage";
 import "./ProductCatalog.css";
 
@@ -27,6 +30,41 @@ function FilterGroup({ title, options, activeValue, onSelect }: FilterGroupProps
         ))}
       </div>
     </div>
+  );
+}
+
+function ProductCard({ product }: { product: Product }) {
+  const { language } = useLanguage();
+  const addItem = useCartStore((s) => s.addItem);
+  const [quantity, setQuantity] = useState(1);
+
+  const handleAdd = () => {
+    addItem(
+      { id: `product-${product.id}`, name: product.name, price: product.price, type: "product" },
+      quantity
+    );
+    setQuantity(1);
+  };
+
+  return (
+    <article className="product-card">
+      <LazyImage src={product.image} webpSrc={product.webpImage} alt={product.name} />
+      <h4>{product.name}</h4>
+      <p className="product-meta">{product.origin} · {product.category}</p>
+      <p className="product-price">€{product.price.toFixed(2)}</p>
+      <div className="product-add-row">
+        <input
+          type="number"
+          min={1}
+          value={quantity}
+          onChange={(e) => setQuantity(Math.max(1, Number(e.target.value)))}
+          className="product-qty-input"
+        />
+        <button className="product-add-btn" onClick={handleAdd}>
+          {cartContent.addToCartButton[language]}
+        </button>
+      </div>
+    </article>
   );
 }
 
@@ -71,12 +109,7 @@ export default function ProductCatalog() {
         <p className="result-count">{filtered.length} products</p>
         <div className="grid">
           {filtered.map((p) => (
-            <article key={p.id} className="product-card">
-              <LazyImage src={p.image} webpSrc={p.webpImage} alt={p.name} />
-              <h4>{p.name}</h4>
-              <p className="product-meta">{p.origin} · {p.category}</p>
-              <p className="product-price">€{p.price.toFixed(2)}</p>
-            </article>
+            <ProductCard key={p.id} product={p} />
           ))}
         </div>
       </div>
