@@ -132,3 +132,9 @@
   text-transform: uppercase;
   cursor: pointer;
 }
+
+@media (max-width: 500px) {
+  .cart-drawer {
+    width: 100%;
+  }
+}

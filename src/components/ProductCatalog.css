@@ -172,3 +172,16 @@
   object-fit: cover;
   display: block;
 }
+
+@media (max-width: 600px) {
+  .catalog {
+    padding: 1rem;
+  }
+  .filter-panel {
+    gap: 1rem;
+  }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}

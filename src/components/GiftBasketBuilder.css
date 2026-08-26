@@ -92,3 +92,13 @@
   font-weight: 700;
   margin-top: 0.5rem;
 }
+
+@media (max-width: 600px) {
+  .basket-builder {
+    padding: 1.5rem 1rem;
+  }
+  .basket-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

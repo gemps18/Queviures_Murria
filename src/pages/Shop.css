@@ -32,3 +32,13 @@
 .shop-tab-content {
   min-height: 60vh;
 }
+
+@media (max-width: 600px) {
+  .shop-tabs {
+    gap: 0.25rem;
+  }
+  .shop-tabs button {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}

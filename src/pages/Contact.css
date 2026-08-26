@@ -127,3 +127,13 @@
   height: 100%;
   border: none;
 }
+
+@media (max-width: 700px) {
+  .contact-page {
+    flex-direction: column;
+    padding: 2rem 1.25rem;
+  }
+  .contact-map {
+    height: 280px;
+  }
+}

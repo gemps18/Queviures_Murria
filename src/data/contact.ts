@@ -17,7 +17,7 @@ export const contactContent: {
   requiredError: T;
 } = {
   heroTitle: { en: "Contact", es: "Contacto", ca: "Contacte" },
-  heading: { en: "Contact us", es: "Contáctanos", ca: "Contacta'ns" },
+  heading: { en: "Contact Us", es: "Contáctanos", ca: "Contacta'ns" },
   subtext: {
     en: "For any questions or suggestions, contact us.",
     es: "Para cualquier duda o sugerencia, contáctanos.",

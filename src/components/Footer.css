@@ -26,3 +26,11 @@
 .footer-col a:hover {
   color: var(--white);
 }
+
+@media (max-width: 700px) {
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+}
