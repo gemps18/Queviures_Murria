@@ -75,7 +75,7 @@ images/ Site imagery (hero photos, gallery, product photos)
 ### Installation
 
 ```bash
-git clone https://github.com/<your-username>/Queviures_Murria.git
+git clone https://github.com
 cd Queviures_Murria
 npm install
 ```
